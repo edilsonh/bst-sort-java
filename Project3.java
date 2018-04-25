@@ -62,6 +62,24 @@ public class Project3 extends JFrame {
     optionPanel.add(numericTypePanel);
     add(optionPanel);
 
+    sort.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        String direction = "";
+        if(ascend.isSelected()) {
+          direction = "ascend";
+        } else {
+          direction = "descend";
+        }
+
+        if(integerOption.isSelected()) {
+          Tree<String> integerObject = new Tree<String>(originalListField.getText(), direction);
+          sortedListField.setText(integerObject.toString());
+        } else {
+          System.out.println("fraction");
+        }
+      }
+    });
+
     pack();
     setVisible(true);
     setSize(500,275);
