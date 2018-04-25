@@ -75,7 +75,8 @@ public class Project3 extends JFrame {
           Tree<String> integerObject = new Tree<String>(originalListField.getText(), direction);
           sortedListField.setText(integerObject.toString());
         } else {
-          System.out.println("fraction");
+          Fraction fractionObject = new Fraction(originalListField.getText(), direction);
+          sortedListField.setText(fractionObject.toString());
         }
       }
     });

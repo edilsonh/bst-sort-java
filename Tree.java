@@ -9,7 +9,7 @@ public class Tree<T> implements Comparable {
     this.direction = direction;
     String[] m = s.split(" ");
     for (String i:m) {
-      this.insert(i);
+      insert(i);
     }
   }
 
