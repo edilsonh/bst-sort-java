@@ -71,12 +71,18 @@ public class Project3 extends JFrame {
           direction = "descend";
         }
 
-        if(integerOption.isSelected()) {
-          Tree<String> integerObject = new Tree<String>(originalListField.getText(), direction);
-          sortedListField.setText(integerObject.toString());
-        } else {
-          Fraction fractionObject = new Fraction(originalListField.getText(), direction);
-          sortedListField.setText(fractionObject.toString());
+        try {
+          if(integerOption.isSelected()) {
+            Tree<String> integerObject = new Tree<String>(originalListField.getText(), direction);
+            sortedListField.setText(integerObject.toString());
+          } else {
+            Fraction fractionObject = new Fraction(originalListField.getText(), direction);
+            sortedListField.setText(fractionObject.toString());
+          }
+        } catch(Exception ex) {
+          System.out.println(ex);
+          JFrame f = new JFrame();
+          JOptionPane.showMessageDialog(f, "Non numeric input");
         }
       }
     });
